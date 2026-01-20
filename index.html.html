@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="Images/y2f.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com">
+
+    <title>Y2F Farms and Agro Services</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; background-color: #f4f4f4; }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #008000; /* Green */
+            padding: 10px 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar img { height: 50px; border-radius: 5px; }
+        .logo { color: white; font-size: 20px; font-weight: bold; }
+        .toggle { display: none; font-size: 28px; color: white; cursor: pointer; }
+        .nav-links { list-style: none; display: flex; gap: 15px; }
+        .nav-links a { color: white; text-decoration: none; font-weight: 500; padding: 8px 12px; transition: 0.3s; }
+        .nav-links a:hover { background-color: #006400; border-radius: 5px; }
+
+        /* Slideshow */
+        .slideshow-container { max-width: 100%; position: relative; overflow: hidden; background: #000; }
+        .mySlides { display: none; }
+        .mySlides img { width: 100%; height: 400px; object-fit: cover; opacity: 0.7; }
+        .text {
+            position: absolute; top: 50%; width: 100%; text-align: center;
+            color: white; font-size: 3rem; font-weight: bold; transform: translateY(-50%);
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+        }
+
+        /* Information Section */
+        .INFORMATION { background-color: #008000; color: white; padding: 50px 10%; text-align: center; }
+        .INFO h3 { margin-bottom: 20px; font-size: 2rem; }
+        .INFO button { 
+            background: white; color: green; border: none; padding: 10px 25px; 
+            font-weight: bold; cursor: pointer; margin-top: 20px; border-radius: 5px; 
+        }
+
+        /* Product Cards */
+        .pics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 50px 5%;
+        }
+        .column-card { background: white; padding: 15px; text-align: center; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .column-card img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; }
+
+        /* Review Section */
+        .review-title { text-align: center; margin-top: 40px; }
+        .review-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 20px 5%;
+        }
+        .review-box { background: #008000; color: white; padding: 20px; border-radius: 15px; }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .toggle { display: block; }
+            .nav-links {
+                display: none; flex-direction: column; width: 100%;
+                position: absolute; top: 70px; left: 0; background: #006400; padding: 20px;
+            }
+            .nav-links.active { display: flex; }
+            .text { font-size: 1.8rem; }
+            .mySlides img { height: 250px; }
+        }
+
+
+        /* Animation Classes */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hover effect for cards */
+.column-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.column-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,128,0,0.2);
+}
+
+
+.floating-whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+    z-index: 2000;
+    text-decoration: none;
+}
+.floating-whatsapp {
+    /* ... your existing styles ... */
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <img src="Images/y2ff.png" alt="Y2F Logo">
+        <div class="logo">Y2F FARMS</div>
+        <div class="toggle" id="toggle">☰</div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="file:///C:/Users/user/Desktop/Myweb/Female%20wears.html">Our Services</a></li>
+            <li><a href="#">Careers</a></li>
+        </ul>
+    </nav>
+
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <img src="Images/sackss.png">
+            <div class="text">DAY OLD CHICKS</div>
+        </div>
+        <div class="mySlides fade">
+            <img src="Images/sacks.png">
+            <div class="text">BROILERS</div>
+        </div>
+        <div class="mySlides fade">
+            <img src="images/sack.png">
+            <div class="text">QUALITY EGGS</div>
+        </div>
+    </div>
+
+    <section class="INFORMATION">
+        <div class="INFO">
+            <h3>WHO WE ARE</h3>
+            <p>Y2F Farms and Agro Services is an integrated poultry farm dedicated to providing high-quality livestock across Nigeria. We help you achieve your farming goals with expertise and quality care.</p>
+            <button>READ MORE</button>
+        </div>
+    </section>
+
+    <div class="pics">
+        <div class="column-card">
+            <img src="images/SSA.png" alt="Broilers">
+            <h4>DAY OLD BROILERS</h4>
+        </div>
+        <div class="column-card">
+            <img src="Images/dfr.png" alt="Point of Lay">
+            <h4>POINT OF LAY</h4>
+        </div>
+        <div class="column-card">
+            <img src="Images/dff.png" alt="Noilers">
+            <h4>DAY OLD NOILERS</h4>
+        </div>
+    </div>
+
+    <div class="review-title"><h2>OUR CUSTOMER REVIEWS</h2></div>
+    <div class="review-container">
+        <div class="review-box">
+            <h3>OLIVER TECH</h3>
+            <p>"The quality of day-old chicks I got from Y2F is unmatched. Very healthy and high survival rate!"</p>
+        </div>
+        <div class="review-box">
+            <h3>CHIDI AGRO</h3>
+            <p>"Excellent customer service and technical support for new farmers."</p>
+        </div>
+    </div>
+
+    <section class="calculator-section" style="padding: 50px 5%; background: #eef9ee; text-align: center;">
+    <h3>Quick Quote Calculator</h3>
+    <div style="max-width: 400px; margin: 20px auto; background: white; padding: 20px; border-radius: 10px;">
+        <label>Select Chick Type:</label>
+        <select id="chickType" style="width: 100%; padding: 10px; margin: 10px 0;">
+            <option value="500">Day Old Broilers (₦500/chick)</option>
+            <option value="700">Point of Lay (₦700/chick)</option>
+            <option value="450">Day Old Noilers (₦450/chick)</option>
+        </select>
+        
+        <label>Quantity:</label>
+        <input type="number" id="quantity" value="50" min="20" style="width: 100%; padding: 10px; margin: 10px 0;">
+        
+        <h4 style="margin: 20px 0;">Estimated Total: <span id="totalPrice" style="color: green;">₦25,000</span></h4>
+        <button onclick="sendOrder()" class="btn-primary" style="background: green; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; width: 100%;">Order via WhatsApp</button>
+    </div>
+</section>
+
+
+    <footer style="background:#333; color:white; text-align:center; padding: 20px; margin-top: 50px;">
+        <p>&copy; 2026 Y2F Farms and Agro Services</p>
+    </footer>
+
+    <script>
+        // Mobile Toggle logic
+        const toggle = document.getElementById('toggle');
+        const navLinks = document.getElementById('navLinks');
+        toggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Slideshow logic
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("mySlides");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            slides[slideIndex-1].style.display = "block";  
+            setTimeout(showSlides, 3000); // Change image every 3 seconds
+        }
+
+
+
+
+    </script>
+
+    <!-- Floating WhatsApp Button -->
+<a href="https://wa.me." 
+   class="floating-whatsapp" 
+   target="_blank" 
+   rel="noopener noreferrer">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+</body>
+</html>
